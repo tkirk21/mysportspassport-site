@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - My Sports Passport</title>
+
+  <!-- Theme load script -->
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --card-bg: #E0E7FF;
+      --text: #0A2940;
+      --text-secondary: #374151;
+      --header-bg: #D1E8FF;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #E0E7FF;
+      --light-text: #0A2940;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0A2940;
+      --card-bg: #1E3A5A;
+      --text: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --header-bg: #0D2C42;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #0D2C42;
+      --light-text: #FFFFFF;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--text);
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 4px solid var(--border);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--text);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin-top: 60px;
+      border-top: 4px solid var(--border);
+    }
+
+    a {
+      color: #4FC3F7; /* bright blue for dark mode */
+    }
+    [data-theme="light"] a {
+      color: #1E40AF; /* keep your perfect dark blue for light mode */
+    }
+    a:hover {
+      color: #81D4FA; /* original hover for dark mode */
+    }
+    [data-theme="light"] a:hover {
+      color: #3B82F6; /* keep your hover for light mode */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <p>My Sports Passport (including My Hockey Passport)</p>
+    <p>Effective Date: January 8, 2026</p>
+  </header>
+
+  <div class="container">
+
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy explains how My Sports Passport ("Application", "we", "us") collects, uses, shares, and protects your information. The Application is a commercial service with a free trial period and subscription pricing, provided "AS IS" by Troy Kirk ("Service Provider").</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We collect the following:</p>
+    <ul>
+      <li><strong>Account Information</strong>: Email address, username, profile picture (if provided), and authentication details when you sign up (via email/password, Google, Apple, or Facebook).</li>
+      <li><strong>Location Data</strong>: Precise location when you check in to arenas/stadiums, and approximate location for finding nearby arenas and games.</li>
+      <li><strong>User-Generated Content</strong>: Check-ins (arena visits, leagues, teams), comments on check-ins, and up to 3 photos per check-in that you upload.</li>
+      <li><strong>Social Data</strong>: Friends list (accepted friendships) and visibility of check-ins/comments to your friends.</li>
+      <li><strong>Usage & Device Data</strong>: IP address, device type, OS version, app version, pages visited, time spent, push notification token, analytics data (via Firebase).</li>
+      <li><strong>Payment Data</strong>: Not collected by us — handled securely by Google Play or Apple App Store for subscriptions.</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>We use it to:</p>
+    <ul>
+      <li>Provide core features: check-ins, friend visibility, comments, photos, nearby arenas, game schedules, subscriptions.</li>
+      <li>Manage the 3-day free trial and premium access.</li>
+      <li>Personalize content and recommendations (e.g., nearby arenas).</li>
+      <li>Improve the app via aggregated/anonymized analytics (Firebase).</li>
+      <li>Send important notices, support responses, or marketing (you can opt out).</li>
+      <li>Comply with legal obligations.</li>
+    </ul>
+
+    <h2>4. Sharing Your Information</h2>
+    <p>We do not sell your data. We share only:</p>
+    <ul>
+      <li>With your friends: check-ins, comments, photos (visible only to accepted friends).</li>
+      <li>With third-party services:
+        <ul>
+          <li>Google Firebase (auth, storage, analytics, crash reporting) — their privacy policy: https://firebase.google.com/support/privacy</li>
+          <li>Google Play Services</li>
+          <li>Apple Sign In (if used)</li>
+          <li>Facebook Login (if used)</li>
+        </ul>
+      </li>
+      <li>As required by law, subpoenas, or to protect rights/safety/fraud.</li>
+      <li>With trusted service providers who work on our behalf (e.g., hosting), bound by this policy.</li>
+    </ul>
+
+    <h2>5. Data Retention</h2>
+    <p>We keep your data as long as your account is active, plus a reasonable time after. Anonymized analytics may be kept longer. After deletion requests, we remove personal data within 30 days.</p>
+
+    <h2>6. Your Rights & Choices</h2>
+    <ul>
+      <li>Delete individual check-ins, comments, or photos directly in the app.</li>
+      <li>Request full or partial data deletion: email support@mysportspassport.app from your registered email, or use the "Delete Account" button in Settings. Include your username/email and details of what to delete.</li>
+      <li>Stop all collection: uninstall the app.</li>
+      <li>Opt out of marketing: reply to emails or contact support.</li>
+    </ul>
+
+    <h2>7. Children</h2>
+    <p>The Application is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover such data, we will delete it immediately. Parents/guardians: contact support@mysportspassport.app if your child has provided information.</p>
+
+    <h2>8. Security</h2>
+    <p>We use reasonable physical, electronic, and procedural safeguards (HTTPS, Firebase encryption in transit and at rest) to protect your information. No system is completely secure.</p>
+
+    <h2>9. Changes to this Policy</h2>
+    <p>We may update this policy. Changes will be posted here. Significant changes will be notified in-app or via email. Continued use after changes means you accept them.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>Email: <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a></p>
+
+  </div>
+
+  <footer>
+    &copy; 2026 My Sports Passport. <a href="/home.html">Home</a> | <a href="/delete-account.html">Delete Account</a> | <a href="/delete-data.html">Delete Data</a>
+  </footer>
+
+  <!-- Theme toggle script (not needed on this page, but added for consistency) -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const initialTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

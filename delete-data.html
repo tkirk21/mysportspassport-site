@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Data - My Sports Passport</title>
+
+  <!-- Theme load script -->
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --card-bg: #E0E7FF;
+      --text: #0A2940;
+      --text-secondary: #374151;
+      --header-bg: #D1E8FF;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #E0E7FF;
+      --light-text: #0A2940;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0A2940;
+      --card-bg: #1E3A5A;
+      --text: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --header-bg: #0D2C42;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #0D2C42;
+      --light-text: #FFFFFF;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--text);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 4px solid var(--border);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      font-size: 1.1em;
+    }
+
+    .warning {
+      background: rgba(211, 47, 47, 0.15);
+      border-left: 6px solid var(--red);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 4px;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin-top: 60px;
+      border-top: 4px solid var(--border);
+    }
+
+    a {
+      color: #4FC3F7; /* bright blue for dark mode */
+    }
+    [data-theme="light"] a {
+      color: #1E40AF; /* keep your perfect dark blue for light mode */
+    }
+    a:hover {
+      color: #81D4FA; /* original hover for dark mode */
+    }
+    [data-theme="light"] a:hover {
+      color: #3B82F6; /* keep your hover for light mode */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Delete Your Data</h1>
+    <p>My Sports Passport (including My Hockey Passport)</p>
+  </header>
+
+  <div class="container">
+
+    <p>You can delete specific data items yourself directly in the app. No support request needed for most things.</p>
+
+    <h2>Self-Service Deletion (Available Now)</h2>
+    <p>Delete individual items anytime:</p>
+    <ul>
+      <li><strong>Check-ins</strong>: Tap the delete button next to any of your check-ins.</li>
+      <li><strong>Comments/Chirps</strong>: Tap the delete button next to any of your comments.</li>
+      <li><strong>Likes/Cheers</strong>: Tap the delete button next to any of your likes/cheers.</li>
+      <li><strong>Photos</strong>: Tap the delete button next to any photo you uploaded in a check-in.</li>
+    </ul>
+    <p>Deletions are immediate and permanent for that item. The data is removed from our servers right away.</p>
+
+    <div class="warning">
+      <strong>Note:</strong> Deleting individual items does not delete your entire account or other data. Use the full account deletion if you want everything gone (see <a href="/delete-account.html">Delete Account</a> page).
+    </div>
+
+    <h2>Email Request for Other Data</h2>
+    <p>If you need to delete something not covered by the self-service buttons (e.g., profile info, friends list, or bulk deletion):</p>
+    <ol>
+      <li>Email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> from your registered email.</li>
+      <li>Subject: "Data Deletion Request"</li>
+      <li>Include your username/email and exactly what to delete (e.g., "all check-ins before 2025", "specific photo IDs", "clear location history").</li>
+    </ol>
+    <p>We process requests within 7–30 days and confirm via email.</p>
+
+    <p>Questions? Just email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>.</p>
+
+  </div>
+
+  <footer>
+    &copy; 2026 My Sports Passport. <a href="/home.html">Home</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a> | <a href="/delete-account.html">Delete Account</a>
+  </footer>
+
+</body>
+</html>

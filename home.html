@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sports Passport</title>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --card-bg: #E0E7FF;
+      --text: #0A2940;
+      --text-secondary: #374151;
+      --header-bg: #D1E8FF;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #E0E7FF;
+      --light-text: #0A2940;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0A2940;
+      --card-bg: #1E3A5A;
+      --text: #FFFFFF;
+      --text-secondary: #CCCCCC;
+      --header-bg: #0D2C42;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #0D2C42;
+      --light-text: #FFFFFF;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--text);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 4px solid var(--border);
+      position: relative;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .sport-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      border: 3px solid var(--border);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .sport-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .sport-card h2 {
+      background: var(--light-bg); /* light in light mode, dark in dark */
+      color: var(--light-text); /* dark text in light mode, white in dark */
+      margin: 0;
+      padding: 16px;
+      font-size: 1.5em;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .sport-card p {
+      padding: 20px;
+      font-size: 1.1em;
+      color: var(--text-secondary);
+    }
+
+    .download-buttons {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 32px;
+      font-size: 1.1em;
+      color: var(--light-text); /* dark in light mode, white in dark */
+      background: var(--light-bg); /* light in light mode, dark in dark */
+      text-decoration: none;
+      border-radius: 30px;
+      border: 2px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: var(--red);
+      color: #FFFFFF;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin-top: 60px;
+      border-top: 4px solid var(--border);
+    }
+
+    a {
+      color: #4FC3F7; /* bright blue for dark mode */
+    }
+    [data-theme="light"] a {
+      color: #1E40AF; /* keep your perfect dark blue for light mode */
+    }
+    a:hover {
+      color: #81D4FA; /* original hover for dark mode */
+    }
+    [data-theme="light"] a:hover {
+      color: #3B82F6; /* keep your hover for light mode */
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      border: 2px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--red);
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Dark Mode</button>
+
+  <header>
+    <h1>My Sports Passport</h1>
+    <p>Track every arena, league, and team you've experienced</p>
+  </header>
+
+  <div class="container">
+    <h2 style="text-align:center;">Available Sports</h2>
+    <div class="sports-grid">
+      <div class="sport-card">
+        <h2>Hockey</h2>
+        <img id="hockey-logo" src="images/logo_with_font_dark.jpg" alt="My Hockey Passport Logo" style="display: block; margin: 16px auto; max-width: 140px; height: auto;">
+        <p>Check in to NHL, AHL, college, and local rinks. See upcoming games, upload arena photos, comment on friends' visits.</p>
+        <div class="download-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.mysportspassport.hockey" class="download-btn google-play">Get on Google Play</a>
+          <a href="https://apps.apple.com/app/my-hockey-passport/id123456789" class="download-btn app-store">Get on Apple Store</a>
+        </div>
+      </div>
+
+      <div class="sport-card">
+        <h2>Australian Football</h2>
+        <p>In development — track matches, stadiums, and teams. Coming soon.</p>
+      </div>
+
+      <div class="sport-card">
+        <h2>American Football</h2>
+        <p>In development — NFL, college, local games. Coming soon.</p>
+      </div>
+
+      <div class="sport-card">
+        <h2>Basketball</h2>
+        <p>In development — NBA, college, courts. Coming soon.</p>
+      </div>
+
+      <div class="sport-card">
+        <h2>Baseball</h2>
+        <p>In development — MLB, minor leagues. Coming soon.</p>
+      </div>
+
+      <div class="sport-card">
+        <h2>Soccer</h2>
+        <p>In development — MLS, international leagues. Coming soon.</p>
+      </div>
+
+      <div class="sport-card">
+        <h2>Rugby League</h2>
+        <p>In development — track matches, stadiums, and teams. Coming soon.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:60px;">
+      <p><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a> | <a href="/delete-account.html">Delete Account</a> | <a href="/delete-data.html">Delete Data</a></p>
+      <p>Contact: <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a></p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 My Sports Passport. All rights reserved.
+  </footer>
+
+  <script>
+  function updateLogo() {
+    const theme = document.documentElement.getAttribute('data-theme');
+    const logo = document.getElementById('hockey-logo');
+    if (logo) {
+      logo.src = theme === 'dark' ? 'images/logo_with_font_dark.jpg' : 'images/logo_with_font.png';
+    }
+  }
+
+  // Run on load and on toggle
+  document.addEventListener('DOMContentLoaded', updateLogo);
+
+  // Override toggleTheme to also update logo
+  const originalToggle = toggleTheme;
+  toggleTheme = function() {
+    originalToggle();
+    updateLogo();
+  };
+</script>
+</body>
+</html>
