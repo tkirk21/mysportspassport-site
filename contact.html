@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - My Sports Passport</title>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initialTheme);
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --text: #0A2940;
+      --header-bg: #D1E8FF;
+      --border: #2F4F68;
+      --light-bg: #E0E7FF;
+      --light-text: #0A2940;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0A2940;
+      --text: #FFFFFF;
+      --header-bg: #0D2C42;
+      --border: #2F4F68;
+      --light-bg: #0D2C42;
+      --light-text: #FFFFFF;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--header-bg);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 4px solid var(--border);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin-top: 60px;
+      border-top: 4px solid var(--border);
+    }
+
+    a {
+      color: #1E40AF;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+    <p>For any questions, support issues, privacy concerns, or legal requests, contact us using the appropriate email below.</p>
+
+    <ul>
+      <li><strong>General Support:</strong> 
+        <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>
+      </li>
+      <li><strong>Privacy & Data Requests:</strong> 
+        <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a>
+      </li>
+      <li><strong>Legal / DMCA:</strong> 
+        <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
+      </li>
+    </ul>
+
+    <p>We aim to respond within 2–5 business days.</p>
+
+    <div style="margin-top:40px;">
+      <a href="index.html">Home</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="delete-account.html">Delete Account</a> |
+      <a href="delete-data.html">Delete Data</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 My Sports Passport. All rights reserved.
+  </footer>
+
+</body>
+</html>
