@@ -6,10 +6,12 @@
   <title>My Sports Passport</title>
 
   <script>
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', initialTheme);
+    const params = new URLSearchParams(window.location.search);
+    const referralCode = params.get('ref');
+
+    if (referralCode) {
+      localStorage.setItem('referralCode', referralCode);
+    }
   </script>
 
   <style>
