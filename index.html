@@ -207,23 +207,54 @@
 
   <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Dark Mode</button>
 
-  <header style="max-width:1200px;margin:60px auto 80px;padding:0 32px;text-align:center;">
+  <nav style="position:sticky;top:0;z-index:1000;background:#FFFFFF;border-bottom:1px solid #E5E7EB;box-shadow:0 2px 10px rgba(0,0,0,.05);">
 
-    <img
-      src="images/my_sports_passport_transparent.png"
-      alt="My Sports Passport"
-      style="width:220px;height:auto;display:block;margin:0 auto 30px;"
-    >
+    <div style="max-width:1300px;margin:0 auto;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;">
 
-    <h1 style="font-size:3rem;font-weight:800;line-height:1.15;color:#0A2940;margin:0 0 20px;">
-      Track Every Stadium.<br>
-      Every Sport.
-    </h1>
+      <img
+        src="images/my_sports_passport_transparent.png"
+        alt="My Sports Passport"
+        style="height:50px;width:auto;"
+      >
 
-    <p style="max-width:720px;margin:0 auto 40px;font-size:1.2rem;line-height:1.8;color:#6B7280;">
-      Download dedicated Passport apps for Baseball, Hockey, Australian Football and more. Check in at venues, upload photos, track your journey, and share it with friends.
-    </p>
-  </header>
+    <div style="display:flex;align-items:center;gap:30px;">
+
+      <a href="#sports" style="text-decoration:none;font-weight:600;color:#0A2940;">Sports</a>
+
+      <a href="contact.html" style="text-decoration:none;font-weight:600;color:#0A2940;">Contact</a>
+
+      <button
+        class="theme-toggle"
+        id="themeBtn"
+        onclick="toggleTheme()"
+        style="position:static;">
+        Dark Mode
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<header style="max-width:1200px;margin:70px auto;padding:0 32px;text-align:center;">
+
+  <img
+    src="images/my_sports_passport_transparent.png"
+    alt="My Sports Passport"
+    style="width:220px;height:auto;display:block;margin:0 auto 30px;"
+  >
+
+  <h1 style="font-size:3rem;font-weight:800;line-height:1.15;color:#0A2940;margin:0 0 20px;">
+    Track Every Stadium.<br>
+    Every Sport.
+  </h1>
+
+  <p style="max-width:720px;margin:0 auto;font-size:1.2rem;line-height:1.8;color:#6B7280;">
+    Download dedicated Passport apps for Baseball, Hockey, Australian Football and more. Check in at venues, upload photos, track your journey, and share it with friends.
+  </p>
+
+</header>
 
     <section id="sports" style="max-width:1300px;margin:0 auto 80px;padding:0 32px;">
 
