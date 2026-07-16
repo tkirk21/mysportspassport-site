@@ -79,31 +79,33 @@
     }
 
     .sport-card {
-      background: var(--card-bg);
-      border-radius: 12px;
+      background: #FFFFFF;
+      border-radius: 20px;
       overflow: hidden;
       text-align: center;
-      border: 3px solid var(--border);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-      transition: transform 0.2s, background 0.3s;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .sport-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.15);
     }
 
     .sport-card h2 {
-      background: var(--light-bg); /* light in light mode, dark in dark */
-      color: var(--light-text); /* dark text in light mode, white in dark */
+      background: transparent;
+      color: var(--text);
       margin: 0;
-      padding: 16px;
-      font-size: 1.5em;
-      border-bottom: 2px solid var(--border);
+      padding: 24px 24px 10px;
+      font-size: 1.6rem;
+      border-bottom: none;
     }
 
     .sport-card p {
-      padding: 20px;
-      font-size: 1.1em;
+      padding: 0 24px 24px;
+      font-size: 1rem;
+      line-height: 1.7;
       color: var(--text-secondary);
     }
 
@@ -187,41 +189,16 @@
   </p>
 </header>
 
-  <div style="background: #ffffff; border: 1px solid #E5E7EB; border-radius: 20px; padding: 50px; margin: 40px auto; max-width: 1100px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,.08);">
-  <h2 style="font-size:2.4rem; margin-top:0; margin-bottom:25px;">What is My Sports Passport?</h2>
-
-  <p style="font-size:1.2rem; line-height:1.9; max-width:900px; margin:0 auto;">
-  My Sports Passport is built for sports fans who want to turn every game into part of a lasting journey. 
-  Check in at stadiums, arenas, ballparks, and venues across multiple sports, track every team and league you experience, 
-  upload your own photos, record personal memories, and build a digital passport of where your sports journey has taken you. 
-  Follow friends, view their check-ins, compare progress, and create a growing record of live sport experiences across leagues, cities, and countries. 
-  Whether you follow major leagues, minor leagues, college sports, or local competitions, every visit becomes part of your personal sporting story. 
-  Choose your sport below and start your journey now.
-</p>
-
-  <h3 style="margin-top: 30px;">App Screenshots</h3>
-  <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
-    <img src="images/checkin.jpg" style="width:160px; border-radius:10px;">
-    <img src="images/hockey-map.jpg" style="width:160px; border-radius:10px;">
-    <img src="images/mlb-map.webp" style="width:160px; border-radius:10px;">
-  </div>
-
-  <h3 style="margin-top: 30px;">See My Sports Passport in Action</h3>
-  <video controls style="width:100%; max-width:700px; border-radius:10px; margin-top:15px;">
-    <source src="images/ai_description.mp4" type="video/mp4">
-  </video>
-
-   <h3 style="margin-top: 30px;">New Referall program. Share the app and earn free subscitption.</h3>
-  <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
-    <img src="images/REFERALL.png" style="width:100%; max-width:700px; border-radius:10px; margin-top:15px;">
-  </div>  
-
-  </div>
-
   <div class="container">
-    <h2 style="text-align:center;">Available Sports</h2>
-    <div class="sports-grid">
+    <h2<h2 style="text-align:center;font-size:2.8rem;margin:0 0 15px;">
+      Choose Your Sport
+    </h2>
 
+    <p style="text-align:center;font-size:1.2rem;color:#6B7280;max-width:700px;margin:0 auto 50px;">
+      Download the Passport app for your favorite sport and start tracking every stadium, arena, and team you visit.
+    </p> style="text-align:center;">Available Sports</h2>
+    
+    <div class="sports-grid">
       <div class="sport-card">
         <h2>Australian Football</h2>
         <img id="footy-logo" src="images/footy_logo.png" alt="My Footy Passport Logo" style="display: block; margin: 16px auto; max-width: 140px; height: auto;">
@@ -271,10 +248,12 @@
         <h2>Soccer</h2>
         <p>In development — MLS, international leagues. Coming soon.</p>
       </div>
-
-      
     </div>
 
+  <h3 style="margin-top: 30px;">App Screenshots</h3>
+   
+
+  </div>
     <div style="text-align:center; margin-top:60px;">
       <p>
       <a href="privacy.html">Privacy Policy</a> |
