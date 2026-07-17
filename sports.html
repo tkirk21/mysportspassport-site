@@ -94,12 +94,13 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       height: 100%;
     }
 
     .sport-card:hover {
       transform: translateY(-8px);
+      border-color: var(--red);
       box-shadow: 0 20px 50px rgba(15,23,42,.15);
     }
 
