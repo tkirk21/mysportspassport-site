@@ -311,9 +311,11 @@
 
         if (html.getAttribute("data-theme") === "dark") {
           html.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
           button.textContent = "Dark Mode";
         } else {
           html.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
           button.textContent = "Light Mode";
         }
 
