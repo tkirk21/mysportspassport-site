@@ -1,188 +1,297 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delete Account - My Sports Passport</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - My Sports Passport</title>
+  
+    <!-- Theme load script -->
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    </script>
+  
+    <style>
+      :root {
+        --bg: #FFFFFF;
+        --card-bg: #E0E7FF;
+        --text: #0A2940;
+        --text-secondary: #374151;
+        --header-bg: #FFFFFF;
+        --accent: #0D2C42;
+        --border: #2F4F68;
+        --red: #D32F2F;
+        --light-bg: #E0E7FF;
+        --light-text: #0A2940;
+      }
+  
+      [data-theme="dark"] {
+        --bg:#081E30;
+        --card-bg:#16344F;
+        --text:#FFFFFF;
+        --text-secondary:#D1D5DB;
+        --header-bg:#081E30;
+        --accent:#0D2C42;
+        --border:#2F4F68;
+        --red:#D32F2F;
+        --light-bg:#102B42;
+        --light-text:#FFFFFF;
+      }
+  
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg);
+        color: var(--text);
+        transition: background-color 0.3s, color 0.3s;
+      }
+  
+      h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+  
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+  
+      h2 {
+        color: var(--text);
+      }
+  
+      ol, ul {
+        margin-left: 20px;
+        font-size: 1.1em;
+      }
+  
+      .warning {
+        background: rgba(211, 47, 47, 0.15);
+        border-left: 6px solid var(--red);
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 4px;
+        color: var(--text);
+      }
+  
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: var(--light-bg);
+        color: var(--light-text);
+        margin-top: 60px;
+        border-top: 4px solid var(--border);
+      }
+  
+      a {
+        color: #4FC3F7; /* bright blue for dark mode */
+      }
+      [data-theme="light"] a {
+        color: #1E40AF; /* keep your perfect dark blue for light mode */
+      }
+      a:hover {
+        color: #81D4FA; /* original hover for dark mode */
+      }
+      [data-theme="light"] a:hover {
+        color: #3B82F6; /* keep your hover for light mode */
+      }
 
-  <!-- Theme load script -->
-  <script>
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  </script>
-
-  <style>
-    :root {
-      --bg: #FFFFFF;
-      --card-bg: #E0E7FF;
-      --text: #0A2940;
-      --text-secondary: #374151;
-      --header-bg: #D1E8FF;
-      --accent: #0D2C42;
-      --border: #2F4F68;
-      --red: #D32F2F;
-      --light-bg: #E0E7FF;
-      --light-text: #0A2940;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0A2940;
-      --card-bg: #1E3A5A;
-      --text: #FFFFFF;
-      --text-secondary: #CCCCCC;
-      --header-bg: #0D2C42;
-      --accent: #0D2C42;
-      --border: #2F4F68;
-      --red: #D32F2F;
-      --light-bg: #0D2C42;
-      --light-text: #FFFFFF;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    header {
-      background-color: var(--header-bg);
-      color: var(--text);
-      text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px solid var(--border);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: var(--text);
-    }
-
-    ol, ul {
-      margin-left: 20px;
-      font-size: 1.1em;
-    }
-
-    .warning {
-      background: rgba(211, 47, 47, 0.15);
-      border-left: 6px solid var(--red);
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 4px;
-      color: var(--text);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: var(--light-bg);
-      color: var(--light-text);
-      margin-top: 60px;
-      border-top: 4px solid var(--border);
-    }
-
-    a {
-      color: #4FC3F7; /* bright blue for dark mode */
-    }
-    [data-theme="light"] a {
-      color: #1E40AF; /* keep your perfect dark blue for light mode */
-    }
-    a:hover {
-      color: #81D4FA; /* original hover for dark mode */
-    }
-    [data-theme="light"] a:hover {
-      color: #3B82F6; /* keep your hover for light mode */
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Delete Your Account</h1>
-  </header>
-
-  <div class="container">
-
-    <p>Deleting your account permanently removes all personal data. This action is immediate and irreversible.</p>
-
-    <h2>How to Delete Your Account (In-App)</h2>
-    <ol>
-      <li>Open the app and go to the Profile tab.</li>
-      <li>Tap the gear icon (Settings).</li>
-      <li>Scroll to "Delete Account" (fourth option down, highlighted bright red).</li>
-      <li>Tap it and confirm the prompt.</li>
-    </ol>
-
-    <p>This permanently deletes:</p>
-    <ul>
-      <li>Your account profile and login info</li>
-      <li>All check-ins (arenas, leagues, teams)</li>
-      <li>All chirps/comments</li>
-      <li>All cheers/likes</li>
-      <li>All uploaded photos</li>
-      <li>Location history from check-ins</li>
-      <li>Favorite leagues, preferences, settings</li>
-      <li>Friends list and connections</li>
-    </ul>
-
-    <div class="warning">
-      <strong>Warning:</strong> Deletion is immediate, permanent, and cannot be undone. All data is removed from our servers. No recovery possible.
-    </div>
-
-    <h2>Alternative: Email Request</h2>
-    <p>If you can't access the app:</p>
-    <ol>
-      <li>Email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> from your registered email.</li>
-      <li>Subject: "Account Deletion Request"</li>
-      <li>Include your username/email and state: "I request full deletion of my account and all associated data."</li>
-    </ol>
-    <p>We process within 7–30 days and confirm via email.</p>
-
-    <h2>Partial Deletion (Self-Service)</h2>
-    <p>Delete individual items yourself in the app:</p>
-    <ul>
-      <li>Your own check-ins</li>
-      <li>Your own comments/chirps</li>
-      <li>Uploaded photos from check-ins</li>
-    </ul>
-    <p>Use edit/delete options on your content.</p>
-
-    <p>Questions? Just email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>.</p>
-
-    <div style="text-align:center; margin-top:60px;">
-      <p>
-      <a href="index.html">Home</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="delete-data.html">Delete Data</a>
+      nav a{
+        transition:.2s;
+      }
+      
+      nav a:hover{
+        color:#2563EB !important;
+      }
+      
+      nav img{
+        transition:.2s;
+      }
+      
+      nav img:hover{
+        transform:scale(1.04);
+      }
+      
+      .theme-toggle{
+        background:var(--light-bg);
+        color:var(--light-text);
+        border:2px solid var(--border);
+        border-radius:30px;
+        padding:10px 22px;
+        font-size:1rem;
+        font-weight:600;
+        cursor:pointer;
+        transition:all .3s ease;
+      }
+      
+      .theme-toggle:hover{
+        transform:translateY(-2px);
+        opacity:.9;
+      }
+      
+    </style>
+  </head>
+  <body>
+  
+    <nav id="main-nav" style="background:var(--header-bg);border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);">
+      <div style="max-width:1500px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;gap:80px;align-items:center;">
+        <a href="index.html">
+          <img
+            id="main-logo"
+            src="images/my_sports_passport_transparent.png"
+            alt="My Sports Passport"
+            style="width:200px;height:auto;display:block;margin:8px 0;"
+          >
+        </a>
+    
+        <div style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
+          <a href="sports.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Sports</a>
+          <a href="index.html#about" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">About</a>
+          <a href="index.html#how-it-works" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">How It Works</a>
+          <a href="index.html#referral" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Referral</a>
+          <a href="index.html#screenshots" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Screenshots</a>
+          <a href="index.html#news" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">News</a>
+          <a href="contact.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Contact</a>
+    
+          <button
+            class="theme-toggle"
+            id="themeBtn"
+            onclick="toggleTheme()"
+            style="position:static;">
+            Dark Mode
+          </button>
+        </div>
+      </div>
+    </nav>
+  
+    <section style="max-width:1300px;margin:60px auto 80px;padding:0 32px;">
+      <h1 style="text-align:center;font-size:3rem;font-weight:800;margin:0 0 20px;color:var(--text);">
+      Delete Your Account
+      </h1>
+      
+      <p style="text-align:center;max-width:720px;margin:0 auto 60px;font-size:1.15rem;line-height:1.8;color:var(--text);">
+      Permanently remove your account and all associated data from My Sports Passport.
       </p>
-      <p>
-      Support: <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> |
-      Privacy: <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a> |
-      Legal: <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
-      </p>
-    </div>
-  </div>
+  
+      <p>Deleting your account permanently removes all personal data. This action is immediate and irreversible.</p>
+  
+      <h2>How to Delete Your Account (In-App)</h2>
+      <ol>
+        <li>Open the app and go to the Profile tab.</li>
+        <li>Tap the gear icon (Settings).</li>
+        <li>Scroll to "Delete Account" (fourth option down, highlighted bright red).</li>
+        <li>Tap it and confirm the prompt.</li>
+      </ol>
+  
+      <p>This permanently deletes:</p>
+      <ul>
+        <li>Your account profile and login info</li>
+        <li>All check-ins (arenas, leagues, teams)</li>
+        <li>All chirps/comments</li>
+        <li>All cheers/likes</li>
+        <li>All uploaded photos</li>
+        <li>Location history from check-ins</li>
+        <li>Favorite leagues, preferences, settings</li>
+        <li>Friends list and connections</li>
+      </ul>
+  
+      <div class="warning">
+        <strong>Warning:</strong> Deletion is immediate, permanent, and cannot be undone. All data is removed from our servers. No recovery possible.
+      </div>
+  
+      <h2>Alternative: Email Request</h2>
+      <p>If you can't access the app:</p>
+      <ol>
+        <li>Email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> from your registered email.</li>
+        <li>Subject: "Account Deletion Request"</li>
+        <li>Include your username/email and state: "I request full deletion of my account and all associated data."</li>
+      </ol>
+      <p>We process within 7–30 days and confirm via email.</p>
+  
+      <h2>Partial Deletion (Self-Service)</h2>
+      <p>Delete individual items yourself in the app:</p>
+      <ul>
+        <li>Your own check-ins</li>
+        <li>Your own comments/chirps</li>
+        <li>Uploaded photos from check-ins</li>
+      </ul>
+      <p>Use edit/delete options on your content.</p>
+  
+      <p>Questions? Just email <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>.</p>
+    </section>
+  
+    <footer style="margin-top:80px;padding:50px 32px;background:var(--light-bg);border-top:1px solid var(--border);color:var(--light-text);">
+      <div style="max-width:1200px;margin:0 auto;text-align:center;">
+        <p>
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="terms.html">Terms of Service</a> |
+          <a href="contact.html">Contact</a> |
+          <a href="delete-account.html">Delete Account</a> |
+          <a href="delete-data.html">Delete Data</a>
+        </p>
+    
+        <p>
+          Support:
+          <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> |
+          Privacy:
+          <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a> |
+          Legal:
+          <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
+        </p>
+    
+        <p style="margin-top:30px;color:var(--light-text);">© 2026 My Sports Passport. All rights reserved.</p>
+      </div>
+    </footer>
 
-  <footer>
-    © 2026 My Sports Passport. All rights reserved.
-  </footer>
-
-</body>
+    <script>
+    function updateLogo() {
+      const mainLogo = document.getElementById("main-logo");
+    
+      if (mainLogo) {
+        mainLogo.src = "images/my_sports_passport_transparent.png";
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", updateLogo);
+    
+    function toggleTheme() {
+      const html = document.documentElement;
+      const button = document.getElementById("themeBtn");
+    
+      if (html.getAttribute("data-theme") === "dark") {
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        button.textContent = "Dark Mode";
+      } else {
+        html.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        button.textContent = "Light Mode";
+      }
+    
+      updateLogo();
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!document.documentElement.getAttribute("data-theme")) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    
+      const button = document.getElementById("themeBtn");
+    
+      if (button) {
+        button.textContent =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "Light Mode"
+            : "Dark Mode";
+      }
+    
+      updateLogo();
+    });
+    </script>
+  </body>
 </html>
