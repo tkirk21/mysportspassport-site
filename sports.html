@@ -224,9 +224,10 @@
 </head>
   
   <body>
-    <nav style="position:sticky;top:0;z-index:1000;background:#FFFFFF;border-bottom:1px solid #E5E7EB;box-shadow:0 2px 10px rgba(0,0,0,.05);">
+    <nav style="position:sticky;top:0;z-index:1000;background:var(--header-bg);border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);">
       <div style="max-width:1300px;margin:0 auto;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;">
         <img
+          id="main-logo"
           src="images/my_sports_passport_transparent.png"
           alt="My Sports Passport"
           style="height:50px;width:auto;"
@@ -342,6 +343,15 @@
     <script>
       function updateLogo() {
         const theme = document.documentElement.getAttribute('data-theme');
+
+        const mainLogo = document.getElementById('main-logo');
+        const theme = document.documentElement.getAttribute('data-theme');
+
+        if (mainLogo) {
+          mainLogo.src = theme === 'dark'
+            ? 'images/my_sports_passport_transparent_dark.png'
+            : 'images/my_sports_passport_transparent.png';
+        }
 
         const hockeyLogo = document.getElementById('hockey-logo');
         const baseballLogo = document.getElementById('baseball-logo');
