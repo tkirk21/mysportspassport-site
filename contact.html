@@ -1,114 +1,243 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - My Sports Passport</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Sports Passport</title>
+  
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    </script>
+  
+    <style>
+      a {
+        color: #4FC3F7;
+      }
 
-  <script>
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  </script>
+      a:hover {
+        color: #81D4FA;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: var(--bg);
+        color: var(--text);
+      }
 
-  <style>
-    :root {
-      --bg: #FFFFFF;
-      --text: #0A2940;
-      --header-bg: #D1E8FF;
-      --border: #2F4F68;
-      --light-bg: #E0E7FF;
-      --light-text: #0A2940;
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      [data-theme="dark"] {
+        --bg: #0A2940;
+        --text: #FFFFFF;
+        --header-bg: #0D2C42;
+        --border: #2F4F68;
+        --light-bg: #0D2C42;
+        --light-text: #FFFFFF;
+      }
+
+      [data-theme="light"] a {
+        color: #1E40AF;
+      }
+
+       [data-theme="light"] a:hover {
+        color: #3B82F6;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: var(--light-bg);
+        color: var(--light-text);
+        margin-top: 60px;
+        border-top: 4px solid var(--border);
+      }
+
+      header {
+        background-color: var(--header-bg);
+        text-align: center;
+        padding: 40px 20px;
+        border-bottom: 4px solid var(--border);
+      }
+
+      nav a{
+        transition:.2s;
+      }
+      
+      nav a:hover{
+        color:#2563EB !important;
+      }
+      
+      nav img{
+        transition:.2s;
+      }
+      
+      nav img:hover{
+        transform:scale(1.04);
+      }
+      
+      :root {
+        --bg: #FFFFFF;
+        --text: #0A2940;
+        --header-bg: #D1E8FF;
+        --border: #2F4F68;
+        --light-bg: #E0E7FF;
+        --light-text: #0A2940;
+      }
+  
+      .theme-toggle{
+        background:var(--light-bg);
+        color:var(--light-text);
+        border:2px solid var(--border);
+        border-radius:30px;
+        padding:10px 22px;
+        font-size:1rem;
+        font-weight:600;
+        cursor:pointer;
+        transition:all .3s ease;
+      }
+      
+      .theme-toggle:hover{
+        transform:translateY(-2px);
+        opacity:.9;
+      }
+      
+    </style>
+  </head>
+  <body>
+  
+    <nav id="main-nav" style="background:var(--header-bg);border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);">
+      <div style="max-width:1500px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;gap:80px;align-items:center;">
+        <a href="index.html">
+          <img
+            id="main-logo"
+            src="images/my_sports_passport_transparent.png"
+            alt="My Sports Passport"
+            style="width:200px;height:auto;display:block;margin:8px 0;"
+          >
+        </a>
+    
+        <div style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
+          <a href="sports.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Sports</a>
+          <a href="index.html#about" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">About</a>
+          <a href="index.html#how-it-works" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">How It Works</a>
+          <a href="index.html#referral" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Referral</a>
+          <a href="index.html#screenshots" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Screenshots</a>
+          <a href="index.html#news" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">News</a>
+          <a href="contact.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Contact</a>
+    
+          <button
+            class="theme-toggle"
+            id="themeBtn"
+            onclick="toggleTheme()"
+            style="position:static;">
+            Dark Mode
+          </button>
+        </div>
+      </div>
+    </nav>
+  
+    <section style="max-width:1300px;margin:60px auto 80px;padding:0 32px;">
+      <h1 style="text-align:center;font-size:3rem;font-weight:800;margin:0 0 20px;color:var(--text);">
+        Contact Us
+      </h1>
+
+      <p style="text-align:center;max-width:720px;margin:0 auto 60px;font-size:1.15rem;line-height:1.8;color:var(--text);">
+        We're here to help with support, privacy, and legal requests.
+      </p>
+      
+      <p>For any questions, support issues, privacy concerns, or legal requests, contact us using the appropriate email below.</p>
+  
+      <ul>
+        <li><strong>General Support:</strong> 
+          <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>
+        </li>
+        <li><strong>Privacy & Data Requests:</strong> 
+          <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a>
+        </li>
+        <li><strong>Legal:</strong> 
+          <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
+        </li>
+      </ul>
+  
+      <p>We aim to respond within 2–5 business days.</p>
+    </section>
+  
+    <footer style="margin-top:80px;padding:50px 32px;background:var(--light-bg);border-top:1px solid var(--border);color:var(--light-text);">
+      <div style="max-width:1200px;margin:0 auto;text-align:center;">
+        <p>
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="terms.html">Terms of Service</a> |
+          <a href="contact.html">Contact</a> |
+          <a href="delete-account.html">Delete Account</a> |
+          <a href="delete-data.html">Delete Data</a>
+        </p>
+    
+        <p>
+          Support:
+          <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> |
+          Privacy:
+          <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a> |
+          Legal:
+          <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
+        </p>
+    
+        <p style="margin-top:30px;color:var(--light-text);">© 2026 My Sports Passport. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+    function updateLogo() {
+      const mainLogo = document.getElementById("main-logo");
+    
+      if (mainLogo) {
+        mainLogo.src = "images/my_sports_passport_transparent.png";
+      }
     }
-
-    [data-theme="dark"] {
-      --bg: #0A2940;
-      --text: #FFFFFF;
-      --header-bg: #0D2C42;
-      --border: #2F4F68;
-      --light-bg: #0D2C42;
-      --light-text: #FFFFFF;
+    
+    document.addEventListener("DOMContentLoaded", updateLogo);
+    
+    function toggleTheme() {
+      const html = document.documentElement;
+      const button = document.getElementById("themeBtn");
+    
+      if (html.getAttribute("data-theme") === "dark") {
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        button.textContent = "Dark Mode";
+      } else {
+        html.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        button.textContent = "Light Mode";
+      }
+    
+      updateLogo();
     }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      background-color: var(--header-bg);
-      text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px solid var(--border);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: var(--light-bg);
-      color: var(--light-text);
-      margin-top: 60px;
-      border-top: 4px solid var(--border);
-    }
-
-    a {
-      color: #4FC3F7;
-    }
-    [data-theme="light"] a {
-      color: #1E40AF;
-    }
-    a:hover {
-      color: #81D4FA;
-    }
-    [data-theme="light"] a:hover {
-      color: #3B82F6;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Contact Us</h1>
-  </header>
-
-  <div class="container">
-    <p>For any questions, support issues, privacy concerns, or legal requests, contact us using the appropriate email below.</p>
-
-    <ul>
-      <li><strong>General Support:</strong> 
-        <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a>
-      </li>
-      <li><strong>Privacy & Data Requests:</strong> 
-        <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a>
-      </li>
-      <li><strong>Legal:</strong> 
-        <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
-      </li>
-    </ul>
-
-    <p>We aim to respond within 2–5 business days.</p>
-
-    <div style="margin-top:40px; text-align:center;">
-      <a href="index.html">Home</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Service</a> |
-      <a href="delete-account.html">Delete Account</a> |
-      <a href="delete-data.html">Delete Data</a>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 My Sports Passport. All rights reserved.
-  </footer>
-
-</body>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!document.documentElement.getAttribute("data-theme")) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    
+      const button = document.getElementById("themeBtn");
+    
+      if (button) {
+        button.textContent =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "Light Mode"
+            : "Dark Mode";
+      }
+    
+      updateLogo();
+    });
+    </script>
+    
+  </body>
 </html>
