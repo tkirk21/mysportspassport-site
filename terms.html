@@ -118,41 +118,22 @@
       }
       
       .theme-toggle {
-        background: #0A2940;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 14px;
-        padding: 14px 24px;
+        background: var(--light-bg);
+        color: var(--light-text);
+        border: 2px solid var(--border);
+        border-radius: 30px;
+        padding: 10px 22px;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
-        transition: .25s;
-      }
-      
-      .theme-toggle:hover {
-        background: #1E40AF;
-        transform: translateY(-2px);
-      }
-      
-      [data-theme="dark"] .theme-toggle {
-        background: #FFFFFF;
-        color: #081E30;
-      }
-      
-      [data-theme="dark"] .theme-toggle:hover {
-        background: #E5E7EB;
+        transition: all 0.3s ease;
       }
 
-      #main-nav {
-        background: #FFFFFF;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      .theme-toggle:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
       }
-      
-      [data-theme="dark"] #main-nav {
-        background: #FFFFFF;
-      }
-      
+
     </style>
   </head>
     <body>
@@ -255,8 +236,8 @@
         <footer style="margin-top:80px;padding:50px 32px;background:var(--light-bg);border-top:1px solid var(--border);color:var(--light-text);">
           <div style="max-width:1200px;margin:0 auto;text-align:center;">
             <p>
+              <a href="index.html">Home</a> |
               <a href="privacy.html">Privacy Policy</a> |
-              <a href="terms.html">Terms of Service</a> |
               <a href="contact.html">Contact</a> |
               <a href="delete-account.html">Delete Account</a> |
               <a href="delete-data.html">Delete Data</a>
@@ -277,13 +258,10 @@
 
         <script>
       function updateLogo() {
-        const theme = document.documentElement.getAttribute("data-theme");
         const mainLogo = document.getElementById("main-logo");
 
         if (mainLogo) {
-          if (theme === "dark") {
-            mainLogo.src = "images/my_sports_passport_transparent.png";
-          }
+          mainLogo.src = "images/my_sports_passport_transparent.png";
         }
       }
 
