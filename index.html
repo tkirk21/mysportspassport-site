@@ -232,7 +232,7 @@
         </a>
 
         <div style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
-          <a href="#sports" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:#0A2940;">Sports</a>
+          <a href="sports.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:#0A2940;">Sports</a>
           <a href="#about" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:#0A2940;">About</a>
           <a href="#how-it-works" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:#0A2940;">How It Works</a>
           <a href="#referral" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:#0A2940;">Referral</a>
@@ -487,11 +487,28 @@
       document.addEventListener('DOMContentLoaded', updateLogo);
 
       // Override toggleTheme to also update logo
-      const originalToggle = toggleTheme;
-      toggleTheme = function() {
-        originalToggle();
+      function toggleTheme() {
+        const html = document.documentElement;
+        const button = document.getElementById("themeBtn");
+
+        if (html.getAttribute("data-theme") === "dark") {
+          html.setAttribute("data-theme", "light");
+          button.textContent = "Dark Mode";
+        } else {
+          html.setAttribute("data-theme", "dark");
+          button.textContent = "Light Mode";
+        }
+
         updateLogo();
-      };
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!document.documentElement.getAttribute("data-theme")) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+
+        updateLogo();
+      });
     </script>
   </body>
 </html>
