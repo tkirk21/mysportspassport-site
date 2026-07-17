@@ -79,21 +79,46 @@
         --light-text: #0A2940;
       }
   
-      .theme-toggle{
-        background:var(--light-bg);
-        color:var(--light-text);
-        border:2px solid var(--border);
-        border-radius:30px;
-        padding:10px 22px;
-        font-size:1rem;
-        font-weight:600;
-        cursor:pointer;
-        transition:all .3s ease;
+      .theme-switch{
+        position:relative;
+        display:inline-block;
+        width:52px;
+        height:28px;
       }
       
-      .theme-toggle:hover{
-        transform:translateY(-2px);
-        opacity:.9;
+      .theme-switch input{
+        opacity:0;
+        width:0;
+        height:0;
+      }
+      
+      .slider{
+        position:absolute;
+        inset:0;
+        background:#9CA3AF;
+        border-radius:999px;
+        cursor:pointer;
+        transition:.25s;
+      }
+      
+      .slider:before{
+        content:"";
+        position:absolute;
+        width:22px;
+        height:22px;
+        left:3px;
+        bottom:3px;
+        background:white;
+        border-radius:50%;
+        transition:.25s;
+      }
+      
+      .theme-switch input:checked + .slider{
+        background:#2563EB;
+      }
+      
+      .theme-switch input:checked + .slider:before{
+        transform:translateX(24px);
       }
 
       [data-theme="dark"] {
@@ -141,13 +166,13 @@
           <a href="index.html#news" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">News</a>
           <a href="contact.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Contact</a>
     
-          <button
-            class="theme-toggle"
-            id="themeBtn"
-            onclick="toggleTheme()"
-            style="position:static;">
-            Dark Mode
-          </button>
+          <label class="theme-switch">
+            <input
+              type="checkbox"
+              id="themeToggle"
+              onchange="toggleTheme()">
+            <span class="slider"></span>
+          </label>
         </div>
       </div>
     </nav>
@@ -214,38 +239,32 @@
     
     function toggleTheme() {
       const html = document.documentElement;
-      const button = document.getElementById("themeBtn");
+      const toggle = document.getElementById("themeToggle");
     
-      if (html.getAttribute("data-theme") === "dark") {
-        html.setAttribute("data-theme", "light");
-        localStorage.setItem("theme", "light");
-        button.textContent = "Dark Mode";
+      if (toggle.checked) {
+        html.setAttribute("data-theme","dark");
+        localStorage.setItem("theme","dark");
       } else {
-        html.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        button.textContent = "Light Mode";
+        html.setAttribute("data-theme","light");
+        localStorage.setItem("theme","light");
       }
     
       updateLogo();
     }
     
     document.addEventListener("DOMContentLoaded", () => {
-      if (!document.documentElement.getAttribute("data-theme")) {
-        document.documentElement.setAttribute("data-theme", "light");
-      }
-    
-      const button = document.getElementById("themeBtn");
-    
-      if (button) {
-        button.textContent =
-          document.documentElement.getAttribute("data-theme") === "dark"
-            ? "Light Mode"
-            : "Dark Mode";
-      }
-    
-      updateLogo();
-    });
+        const savedTheme = localStorage.getItem("theme") || "light";
+      
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      
+        const toggle = document.getElementById("themeToggle");
+        if (toggle) {
+          toggle.checked = savedTheme === "dark";
+        }
+      
+        updateLogo();
+      });
     </script>
-    
+
   </body>
 </html>
