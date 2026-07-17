@@ -523,20 +523,13 @@
         }
       
         updateLogo();
-
-        const toggle = document.getElementById("themeToggle");
-
-        if (toggle) {
-          toggle.checked =
-            document.documentElement.getAttribute("data-theme") === "dark";
-        }
       }
-
+      
       document.addEventListener("DOMContentLoaded", () => {
         if (!document.documentElement.getAttribute("data-theme")) {
           document.documentElement.setAttribute("data-theme", "light");
         }
-
+      
         updateLogo();
       });
     </script>
