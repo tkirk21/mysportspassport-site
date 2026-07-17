@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-themeheader {="light">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GG7F7ESGK8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GG7F7ESGK8');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | My Sports Passport</title>
+  <meta name="description" content="Track every stadium, arena, ballpark, and sporting venue you visit with My Sports Passport. Check in live at games or add past visits, upload photos, explore schedules, follow friends, view statistics, and build your personal sports Passport across baseball, hockey, Australian football, soccer, and more.">
+  <meta name="keywords" content="My Sports Passport, sports passport, sports travel, sports travel app, stadium tracker, stadium tracking, stadium check in, arena tracker, arena check in, ballpark tracker, sports bucket list, stadium bucket list, baseball stadiums, MLB ballparks, minor league baseball, hockey arenas, NHL arenas, AHL arenas, ECHL arenas, Australian football grounds, AFL stadiums, soccer stadiums, football stadiums, rugby stadiums, basketball arenas, sports app, stadium app, baseball app, hockey app, AFL app, soccer app, live check in, past check in, game tracker, sports journal, sports passport app, stadium passport, ballpark passport, arena passport, travel tracker, stadium challenge, sports fan app, sports photography, stadium visits, ballpark visits, arena visits, sports memories, sports statistics, sports friends, stadium map, sports venue tracker, stadium collection, ballpark collection, arena collection">
+  <meta name="author" content="My Sports Passport">  
+  <meta name="robots" content="index, follow"> 
+  <link rel="canonical" href="https://mysportspassport.app/">
+  <meta property="og:title" content="My Sports Passport">
+  <meta property="og:description" content="Track every stadium, arena, and ballpark you visit. Check in, upload photos, build your Passport, and share your sports journey.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mysportspassport.app/">
+  <meta property="og:image" content="https://mysportspassport.app/images/social-preview.png">
+  <meta property="og:image:alt" content="My Sports Passport - Track every stadium, arena and ballpark you visit.">
+  <meta property="og:site_name" content="My Sports Passport">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Sports Passport">
+  <meta name="twitter:description" content="Track every stadium, arena, and ballpark you visit.">
+  <meta name="twitter:image" content="https://mysportspassport.app/images/social-preview.png">
+      
+    
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const referralCode = params.get('ref');
+
+    if (referralCode) {
+      localStorage.setItem('referralCode', referralCode);
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --card-bg: #E0E7FF;
+      --text: #0A2940;
+      --text-secondary: #374151;
+      --header-bg: #FFFFFF;
+      --accent: #0D2C42;
+      --border: #2F4F68;
+      --red: #D32F2F;
+      --light-bg: #E0E7FF;
+      --light-text: #0A2940;
+    }
+
+    [data-theme="dark"] {
+      --bg:#081E30;
+      --card-bg:#16344F;
+      --text:#FFFFFF;
+      --text-secondary:#D1D5DB;
+      --header-bg:#081E30;
+      --accent:#0D2C42;
+      --border:#2F4F68;
+      --red:#D32F2F;
+      --light-bg:#102B42;
+      --light-text:#FFFFFF;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background:var(--bg);
+      text-align:center;
+      padding:40px 32px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 32px;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+      align-items: stretch;
+    }
+
+    .sport-card img {
+      width: 190px;
+      height: 190px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 24px;
+    }
+
+    .sport-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(15,23,42,.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .sport-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(15,23,42,.15);
+    }
+
+    .sport-card h2 {
+      margin: 0;
+      padding: 28px 28px 10px;
+      background: transparent;
+      color: var(--text);
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .sport-card p {
+      padding: 0 28px 28px;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      flex: 1;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      margin: 0 auto 20px;
+      padding: 8px 18px;
+      background: #F59E0B;
+      color: #FFFFFF;
+      font-size: .9rem;
+      font-weight: 700;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .download-buttons {
+      margin: auto 28px 28px;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 12px 0;
+      padding: 16px 20px;
+      box-sizing: border-box;
+      border-radius: 14px;
+      border: none;
+      background: #0A2940;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all .25s ease;
+    }
+    
+    .download-btn:hover {
+      background: #1E40AF;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin-top: 60px;
+      border-top: 4px solid var(--border);
+    }
+
+    a {
+      color: #4FC3F7; /* bright blue for dark mode */
+    }
+    [data-theme="light"] a {
+      color: #1E40AF; /* keep your perfect dark blue for light mode */
+    }
+    a:hover {
+      color: #81D4FA; /* original hover for dark mode */
+    }
+    [data-theme="light"] a:hover {
+      color: #3B82F6; /* keep your hover for light mode */
+    }
+
+    .theme-switch{
+      position:relative;
+      display:inline-block;
+      width:52px;
+      height:28px;
+    }
+    
+    .theme-switch input{
+      opacity:0;
+      width:0;
+      height:0;
+    }
+    
+    .slider{
+      position:absolute;
+      inset:0;
+      background:#9CA3AF;
+      border-radius:999px;
+      cursor:pointer;
+      transition:.25s;
+    }
+    
+    .slider:before{
+      content:"";
+      position:absolute;
+      width:22px;
+      height:22px;
+      left:3px;
+      bottom:3px;
+      background:white;
+      border-radius:50%;
+      transition:.25s;
+    }
+    
+    .theme-switch input:checked + .slider{
+      background:#2563EB;
+    }
+    
+    .theme-switch input:checked + .slider:before{
+      transform:translateX(24px);
+    }
+
+    nav a{
+      transition:.2s;
+    }
+
+    nav a:hover{
+      color:#2563EB !important;
+    }
+
+    nav img{
+      transition:.2s;
+    }
+
+    nav img:hover{
+      transform:scale(1.04);
+    }
+    
+  </style>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+  
+  <body>
+    <nav id="main-nav" style="background:var(--header-bg);border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.05);">
+      <div style="max-width:1500px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;gap:80px;align-items:center;">
+        <a href="index.html">
+
+          <img
+            src="images/my_sports_passport_transparent.png"
+            alt="My Sports Passport"
+            style="width:200px;height:auto;display:block;margin:8px 0;"
+          >
+        </a>
+
+        <div style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
+          <a href="index.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Home</a>
+          <a href="sports.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Sports</a>
+          <a href="contact.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Contact</a>
+          <label class="theme-switch">
+            <input
+              type="checkbox"
+              id="themeToggle"
+              onchange="toggleTheme()">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <header style="max-width:900px;margin:80px auto;padding:0 32px;text-align:center;">
+      <h1 style="font-size:5rem;font-weight:800;color:var(--text);margin-bottom:20px;">
+        404
+      </h1>
+    
+      <h2 style="font-size:2.2rem;color:var(--text);margin-bottom:20px;">
+        Page Not Found
+      </h2>
+    
+      <p style="max-width:650px;margin:0 auto 40px;font-size:1.2rem;line-height:1.8;color:var(--text-secondary);">
+        The page you're looking for doesn't exist or may have been moved.
+      </p>
+    
+      <a
+        href="index.html"
+        style="
+          display:inline-block;
+          background:#0A2940;
+          color:#FFFFFF;
+          text-decoration:none;
+          padding:18px 48px;
+          border-radius:14px;
+          font-size:1.15rem;
+          font-weight:700;
+        ">
+        Return to Home
+      </a>
+    </header>
+
+    <footer style="margin-top:40px;padding:40px 32px;background:var(--light-bg);border-top:1px solid var(--border);">
+      <div style="max-width:1200px;margin:0 auto;text-align:center;">
+        <p>
+          <a href="index.html">Home</a>
+          <a href="sports.html">Sports</a>
+          <a href="contact.html">Contact</a>
+        </p>
+
+        <p>
+          Support:
+          <a href="mailto:support@mysportspassport.app">support@mysportspassport.app</a> |
+          Privacy:
+          <a href="mailto:privacy@mysportspassport.app">privacy@mysportspassport.app</a> |
+          Legal:
+          <a href="mailto:legal@mysportspassport.app">legal@mysportspassport.app</a>
+        </p>
+        
+       <p style="margin-top:30px;color:var(--light-text);"> © 2026 My Sports Passport. All rights reserved. </p>
+      </div>
+    </footer>
+
+    <script>
+      function updateLogo() {
+        const theme = document.documentElement.getAttribute('data-theme');
+
+        const hockeyLogo = document.getElementById('hockey-logo');
+        const baseballLogo = document.getElementById('baseball-logo');
+        const footyLogo = document.getElementById('footy-logo');
+
+        if (hockeyLogo) {
+          hockeyLogo.src = theme === 'dark'
+            ? 'images/logo_with_font_dark.jpg'
+            : 'images/logo_with_font.png';
+        }
+
+        if (baseballLogo) {
+          baseballLogo.src = theme === 'dark'
+            ? 'images/logo_with_font_dark_baseball.png'
+            : 'images/logo_with_font_baseball.png';
+        }
+
+        if (footyLogo) {
+          footyLogo.src = theme === 'dark'
+          ? 'images/footy_logo_dark.png'
+          : 'images/footy_logo_light.png';
+        }
+      }
+
+      // Run on load and on toggle
+      document.addEventListener('DOMContentLoaded', updateLogo);
+
+      // Override toggleTheme to also update logo
+      function toggleTheme() {
+        const html = document.documentElement;
+        const toggle = document.getElementById("themeToggle");
+      
+        if (toggle.checked) {
+          html.setAttribute("data-theme","dark");
+          localStorage.setItem("theme","dark");
+        } else {
+          html.setAttribute("data-theme","light");
+          localStorage.setItem("theme","light");
+        }
+      
+        updateLogo();
+      }
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+      
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      
+        const toggle = document.getElementById("themeToggle");
+        if (toggle) {
+          toggle.checked = savedTheme === "dark";
+        }
+      
+        updateLogo();
+      });
+    </script>
+  </body>
+</html>
