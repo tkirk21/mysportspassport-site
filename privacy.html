@@ -115,6 +115,32 @@
       nav img:hover{
         transform:scale(1.04);
       }
+      .theme-toggle {
+         background: #0A2940;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 14px;
+        padding: 14px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .25s;
+      }
+
+      .theme-toggle:hover {
+        background: #1E40AF;
+        transform: translateY(-2px);
+      }
+
+      [data-theme="dark"] .theme-toggle {
+        background: #FFFFFF;
+        color: #081E30;
+      }
+
+      [data-theme="dark"] .theme-toggle:hover {
+        background: #E5E7EB;
+      }
+      
     </style>
   </head>
   <body>
@@ -295,33 +321,18 @@
           const html = document.documentElement;
           const button = document.getElementById("themeBtn");
 
-          if (html.getAttribute("data-theme") === "dark") {
-            html.setAttribute("data-theme", "light");
-            button.textContent = "Dark Mode";
-          } else {
-            html.setAttribute("data-theme", "dark");
-            button.textContent = "Light Mode";
-          }
+          const newTheme =
+            html.getAttribute("data-theme") === "dark"
+              ? "light"
+              : "dark";
 
-          localStorage.setItem("theme", html.getAttribute("data-theme"));
-          updateLogo();
-        }
+          html.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
 
-        document.addEventListener("DOMContentLoaded", () => {
-          const savedTheme = localStorage.getItem("theme");
-
-          if (savedTheme) {
-            document.documentElement.setAttribute("data-theme", savedTheme);
-          }
-
-          const button = document.getElementById("themeBtn");
-
-          if (button) {
-            button.textContent =
-              document.documentElement.getAttribute("data-theme") === "dark"
-                ? "Light Mode"
-                : "Dark Mode";
-          }
+          button.textContent =
+            newTheme === "dark"
+              ? "Light Mode"
+              : "Dark Mode";
 
           updateLogo();
         });
