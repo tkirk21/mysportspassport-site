@@ -407,24 +407,29 @@
 
       function toggleTheme() {
         const html = document.documentElement;
-        const button = document.getElementById("themeBtn");
-  
-        if (html.getAttribute("data-theme") === "dark") {
-          html.setAttribute("data-theme", "light");
-          button.textContent = "Dark Mode";
+        const toggle = document.getElementById("themeToggle");
+      
+        if (toggle.checked) {
+          html.setAttribute("data-theme","dark");
+          localStorage.setItem("theme","dark");
         } else {
-          html.setAttribute("data-theme", "dark");
-          button.textContent = "Light Mode";
+          html.setAttribute("data-theme","light");
+          localStorage.setItem("theme","light");
         }
-
+      
         updateLogo();
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        if (!document.documentElement.getAttribute("data-theme")) {
-          document.documentElement.setAttribute("data-theme", "light");
+        const savedTheme = localStorage.getItem("theme") || "light";
+      
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      
+        const toggle = document.getElementById("themeToggle");
+        if (toggle) {
+          toggle.checked = savedTheme === "dark";
         }
-
+      
         updateLogo();
       });
     </script>
