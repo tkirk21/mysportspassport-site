@@ -379,12 +379,28 @@
       // Run on load and on toggle
       document.addEventListener('DOMContentLoaded', updateLogo);
 
-      // Override toggleTheme to also update logo
-      const originalToggle = toggleTheme;
-      toggleTheme = function() {
-        originalToggle();
+      function toggleTheme() {
+        const html = document.documentElement;
+        const button = document.getElementById("themeBtn");
+  
+        if (html.getAttribute("data-theme") === "dark") {
+          html.setAttribute("data-theme", "light");
+          button.textContent = "Dark Mode";
+        } else {
+          html.setAttribute("data-theme", "dark");
+          button.textContent = "Light Mode";
+        }
+
         updateLogo();
-      };
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!document.documentElement.getAttribute("data-theme")) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+
+        updateLogo();
+      });
     </script>
   </body>
 </html>
