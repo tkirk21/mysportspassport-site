@@ -332,30 +332,30 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;">
 
           <div style="background:var(--card-bg);border-radius:20px;padding:30px;">
-            <h3 style="margin-top:0;color:#FFFFFF;">1. Find a Game</h3>
+            <h3 style="margin-top:0;color:var(--text);">1. Live Check In</h3>
             <p style="color:var(--text-secondary);line-height:1.8;">
-              Browse today's games or search for a stadium.
+              Check in while you're at the stadium, arena, or ballpark. Select today's game, add photos and notes if you like, and instantly record your visit.
             </p>
           </div>
 
           <div style="background:var(--card-bg);border-radius:20px;padding:30px;">
-            <h3 style="margin-top:0;color:#FFFFFF;">2. Check In</h3>
+            <h3 style="margin-top:0;color:var(--text);">2. Past Check In</h3>
             <p style="color:var(--text-secondary);line-height:1.8;">
-              Check in live or manually after your visit.
+              Forgot to check in on game day? Add previous visits by selectingthe date, the league, the venue, teams, and game details to complete your Passport.
             </p>
           </div>
 
           <div style="background:var(--card-bg);border-radius:20px;padding:30px;">
-            <h3 style="margin-top:0;color:#FFFFFF;">3. Upload Photos</h3>
+            <h3 style="margin-top:0;color:var(--text);">3. Explore</h3>
             <p style="color:var(--text-secondary);line-height:1.8;">
-              Save your memories from every stadium you visit.
+              Browse today's schedule, find nearby venues, explore every league, view stadium information, and discover your next game.
             </p>
           </div>
 
           <div style="background:var(--card-bg);border-radius:20px;padding:30px;">
-            <h3 style="margin-top:0;color:#FFFFFF;">4. Build Your Passport</h3>
+            <h3 style="margin-top:0;color:var(--text);">4. Track Your Journey</h3>
             <p style="color:var(--text-secondary);line-height:1.8;">
-              Track every venue and watch your collection grow.
+              See your statistics, collect every venue, upload photos, compare progress with friends, and build your personal sports Passport over time.
             </p>
           </div>
         </div>
@@ -526,8 +526,13 @@
       }
       
       document.addEventListener("DOMContentLoaded", () => {
-        if (!document.documentElement.getAttribute("data-theme")) {
-          document.documentElement.setAttribute("data-theme", "light");
+        const savedTheme = localStorage.getItem("theme") || "light";
+      
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      
+        const toggle = document.getElementById("themeToggle");
+        if (toggle) {
+          toggle.checked = savedTheme === "dark";
         }
       
         updateLogo();
