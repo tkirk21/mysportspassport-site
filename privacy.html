@@ -116,30 +116,21 @@
         transform:scale(1.04);
       }
       .theme-toggle {
-         background: #0A2940;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 14px;
-        padding: 14px 24px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: .25s;
-      }
+  background: var(--light-bg);
+  color: var(--light-text);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-      .theme-toggle:hover {
-        background: #1E40AF;
-        transform: translateY(-2px);
-      }
-
-      [data-theme="dark"] .theme-toggle {
-        background: #FFFFFF;
-        color: #081E30;
-      }
-
-      [data-theme="dark"] .theme-toggle:hover {
-        background: #E5E7EB;
-      }
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
       
     </style>
   </head>
@@ -305,12 +296,10 @@
 
     <script>
       function updateLogo() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const mainLogo = document.getElementById('main-logo');
+        const mainLogo = document.getElementById("main-logo");
 
         if (mainLogo) {
-          mainLogo.src = theme === 'dark'
-            : 'images/my_sports_passport_transparent.png';
+          mainLogo.src = "images/my_sports_passport_transparent.png";
         }
       }
 
