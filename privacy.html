@@ -19,7 +19,7 @@
         --card-bg: #E0E7FF;
         --text: #0A2940;
         --text-secondary: #374151;
-        --header-bg: #D1E8FF;
+        --header-bg: #FFFFFF;
         --accent: #0D2C42;
         --border: #2F4F68;
         --red: #D32F2F;
@@ -28,15 +28,15 @@
       }
   
       [data-theme="dark"] {
-        --bg: #0A2940;
+        --bg:#081E30;
         --card-bg: #1E3A5A;
         --text: #FFFFFF;
         --text-secondary: #CCCCCC;
-        --header-bg: #0D2C42;
+        --header-bg:#081E30;
         --accent: #0D2C42;
         --border: #2F4F68;
         --red: #D32F2F;
-        --light-bg: #0D2C42;
+        --light-bg: #102B42;
         --light-text: #FFFFFF;
       }
   
@@ -99,6 +99,21 @@
       }
       [data-theme="light"] a:hover {
         color: #3B82F6; /* keep your hover for light mode */
+      }
+      nav a{
+        transition:.2s;
+      }
+
+      nav a:hover{
+        color:#2563EB !important;
+      }
+
+      nav img{
+        transition:.2s;
+      }
+
+      nav img:hover{
+        transform:scale(1.04);
       }
     </style>
   </head>
