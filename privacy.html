@@ -304,38 +304,66 @@
     </footer>
 
     <script>
-      function updateLogo() {
-          const theme = document.documentElement.getAttribute('data-theme');
-          const mainLogo = document.getElementById('main-logo');
+        function updateLogo() {
+        const theme = document.documentElement.getAttribute("data-theme");
+        const mainLogo = document.getElementById("main-logo");
 
-          if (mainLogo) {
-            mainLogo.src = theme === 'dark'
-              ? 'images/my_sports_passport_transparent_dark.png'
-              : 'images/my_sports_passport_transparent.png';
+        if (mainLogo) {
+          if (theme === "dark") {
+            mainLogo.src = "images/my_sports_passport_transparent_dark.png";
+          } else {
+            mainLogo.src = "images/my_sports_passport_transparent.png";
+          }
+        }
+      }
+
+      function toggleTheme() {
+        const html = document.documentElement;
+        const button = document.getElementById("themeBtn");
+
+        let newTheme;
+
+        if (html.getAttribute("data-theme") === "dark") {
+          newTheme = "light";
+        } else {
+          newTheme = "dark";
+        }
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        if (button) {
+          if (newTheme === "dark") {
+            button.textContent = "Light Mode";
+          } else {
+            button.textContent = "Dark Mode";
           }
         }
 
-        document.addEventListener('DOMContentLoaded', updateLogo);
+        updateLogo();
+      }
 
-        function toggleTheme() {
-          const html = document.documentElement;
-          const button = document.getElementById("themeBtn");
+      document.addEventListener("DOMContentLoaded", function () {
+          const savedTheme = localStorage.getItem("theme");
 
-          const newTheme =
-            html.getAttribute("data-theme") === "dark"
-              ? "light"
-              : "dark";
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
 
-          html.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
+        const button = document.getElementById("themeBtn");
 
-          button.textContent =
-            newTheme === "dark"
-              ? "Light Mode"
-              : "Dark Mode";
+        if (button) {
+          if (document.documentElement.getAttribute("data-theme") === "dark") {
+            button.textContent = "Light Mode";
+          } else {
+            button.textContent = "Dark Mode";
+          }
+        }
 
-          updateLogo();
-        });
-      </script>
+        updateLogo();
+      });
+    </script>
   </body>
 </html>
