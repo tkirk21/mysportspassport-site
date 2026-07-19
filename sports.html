@@ -155,9 +155,9 @@
         padding: 16px 20px;
         box-sizing: border-box;
         border-radius: 14px;
-        border: none;
-        background: var(--accent);
-        color: #FFFFFF;
+        border: 2px solid var(--border);
+        background: #FFFFFF;
+        color: var(--text);
         text-decoration: none;
         font-size: 1rem;
         font-weight: 600;
@@ -165,8 +165,19 @@
       }
       
       .download-btn:hover {
-        background: var(--red);
+        background: #F3F4F6;
+        border-color: var(--red);
         transform: translateY(-2px);
+      }
+      
+      [data-theme="dark"] .download-btn {
+        background: var(--accent);
+        color: #FFFFFF;
+        border-color: var(--border);
+      }
+      
+      [data-theme="dark"] .download-btn:hover {
+        background: var(--red);
       }
   
       footer {
