@@ -146,10 +146,6 @@
         letter-spacing: .5px;
       }
   
-      .download-buttons {
-        margin: auto 28px 32px;
-      }
-  
       .download-btn {
         display: flex;
         align-items: center;
@@ -159,32 +155,17 @@
         padding: 16px 20px;
         box-sizing: border-box;
         border-radius: 14px;
+        border: none;
+        background: var(--accent);
         color: #FFFFFF;
         text-decoration: none;
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 600;
         transition: all .25s ease;
       }
       
-      .google-play {
-        background: #34A853;
-        border: 2px solid #34A853;
-      }
-      
-      .google-play:hover {
-        background: #2D944A;
-        border-color: #2D944A;
-        transform: translateY(-2px);
-      }
-      
-      .app-store {
-        background: #000000;
-        border: 2px solid #000000;
-      }
-      
-      .app-store:hover {
-        background: #222222;
-        border-color: #222222;
+      .download-btn:hover {
+        background: var(--red);
         transform: translateY(-2px);
       }
   
