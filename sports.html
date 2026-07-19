@@ -146,36 +146,45 @@
         letter-spacing: .5px;
       }
   
+      .download-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin: auto 28px 32px;
+    }
+      
       .download-btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin: 12px auto;
         padding: 16px 28px;
-        border-radius: 14px;
+        margin: 0;
         border: 2px solid var(--border);
+        border-radius: 14px;
         background: #FFFFFF;
         color: var(--text);
         text-decoration: none;
         font-size: 1rem;
         font-weight: 600;
         transition: all .25s ease;
-      }
-      
-      .download-buttons {
-        margin: auto 28px 32px;
-        text-align: center;
-      }
-      
-      [data-theme="dark"] .download-btn {
+    }
+    
+    .download-btn:hover {
+        background: #F3F4F6;
+        border-color: var(--red);
+        transform: translateY(-2px);
+    }
+    
+    [data-theme="dark"] .download-btn {
         background: var(--accent);
         color: #FFFFFF;
         border-color: var(--border);
-      }
-      
-      [data-theme="dark"] .download-btn:hover {
+    }
+    
+    [data-theme="dark"] .download-btn:hover {
         background: var(--red);
-      }
+    }
   
       footer {
         text-align: center;
