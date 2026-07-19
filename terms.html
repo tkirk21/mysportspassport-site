@@ -167,6 +167,26 @@
       .theme-switch input:checked + .slider:before{
         transform:translateX(24px);
       }
+
+      @media (max-width: 768px) {
+
+      .nav-container{
+        flex-direction:column;
+        gap:20px !important;
+        padding:16px 18px !important;
+      }
+    
+      .nav-links{
+        justify-content:center;
+        gap:16px !important;
+      }
+    
+      .nav-links a{
+        font-size:.95rem !important;
+      }
+    
+    }
+      
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -177,7 +197,7 @@
     <body>
 
         <nav id="main-nav">
-          <div style="max-width:1500px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;gap:80px;align-items:center;">
+          <div class="nav-container" style="max-width:1500px;margin:0 auto;padding:0 18px;display:flex;justify-content:space-between;gap:80px;align-items:center;">
             <a href="index.html">
               <img
                 id="main-logo"
@@ -187,7 +207,7 @@
               >
             </a>
       
-            <div style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
+            <div class="nav-links" style="display:flex;align-items:center;gap:42px;flex-wrap:wrap;">
               <a href="sports.html" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">Sports</a>
               <a href="index.html#about" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">About</a>
               <a href="index.html#how-it-works" style="text-decoration:none;font-size:1.05rem;font-weight:600;color:var(--text);">How It Works</a>
